@@ -68,3 +68,40 @@ and when a variable is added to a class is called a **property**
 - with the parentheses we construct an object, the so called constructor method of a class, 
 - every class has one even if you do not explicitly define it 
 - MaterialApp is the wrapper for the entire app;
+
+## What is Layout Builder
+LayoutBuilder is a widget which provides the dimensions of its parent so we can know how much space we have for the widget and can build it our child accordingly
+LayoutBuilder widget's builder method provides us BuildContext and BoxConstraints
+
+```dart
+LayoutBuilder(
+    builder: (context, constraints) {
+
+    },
+)
+```
+this is how our basic LayoutBuilder widget looks like
+BoxConstraints provides us with various options it will give us the maxWidth and `maxHeight` available for us;
+
+```dart
+constraints.maxWidth; // get Maximum available width
+constraints.maxHeight; // get Maximum available height
+constraints.minWidth; // get Minimum available width
+constraints.minHeight; // get Minimum available height
+```
+
+👉 more about [BoxConstraints](https://api.flutter.dev/flutter/rendering/BoxConstraints-class.html);
+
+👉 based on `maxWidth` we can build our layout
+
+```dart
+LayoutBuilder(
+    builder: (context, constraints) {
+        if(constraints.maxWidth > 600) {
+            getWideLayout();
+        } else {
+            getNormalLayout();
+        }
+    },
+)
+```
