@@ -37,3 +37,34 @@ The List can contain - `LIST ITEMS`- which are child widgets
 for example a button widget would not just display the button  but also it would define what should happen when that button is tapped,
 
 flutter app is building not by doing all  the heavy lifting of hooking it into the operating system but by creating user interfaces,and the logic that belongs to that user interface, things like selecting items, uploading things to a server, fetching data from a server and rendering it to the screen, 
+
+👉 Dart is an OOP language and uses `class` - everything is an **OBJECT**
+👉 Dart is a modular language which means that the code is split across multiple files, some of this code is stored in the flutter framework package, code can be imported from such a package the following way:
+
+```dart
+import 'package:flutter/material.dart';
+```
+- a file is targeting by adding a slash /
+### Object
+- an Object is simply a data structure
+- classes allows to create blueprints for new objects, so that we can say what should be inside such an object;
+- class name start with a capital character
+- we can add features to it
+- functions can be added to classes - they are called methods 
+- variables can be added to functions 
+
+(for complete beginners who doesn't know what are variables- they are little data structures, like a `name`, 
+```js
+name ="Irene";
+
+// name is the variable holding "Irene" as a value,
+```
+and when a variable is added to a class is called a **property**
+)
+
+## methods
+👉 build() - in build method a widget always return another widget
+
+- with the parentheses we construct an object, the so called constructor method of a class, 
+- every class has one even if you do not explicitly define it 
+- MaterialApp is the wrapper for the entire app;
