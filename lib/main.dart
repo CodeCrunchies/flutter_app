@@ -1,18 +1,30 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext constext) {
-    return MaterialApp(home:Scaffold(
-      appBar: AppBar(title: Text('EasyList'),
-      )
-      body.Card(child: Column(children: <Widget>[
-        Image.(),
-        Text('Food Paradise')
-]),),
+    var questions = [
+      'What\'s your favorite color?',
+      'What\'s your favourite animal?'
+    ];
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('My First App'),
+        ),
+        body: Column(
+          children: [
+            Text('The question!'),
+            RaisedButton(child: Text('Answer 1'), onPressed: null),
+            RaisedButton(child: Text('Answer 2'), onPressed: null),
+            RaisedButton(child: Text('Answer 3'), onPressed: null),
+          ],
+        ),
       ),
-     ); 
+    );
   }
 }
