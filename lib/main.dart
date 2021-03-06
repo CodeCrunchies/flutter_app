@@ -15,50 +15,63 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
+  final questions = const [
+    {
+      'questionText': 'What\'s your favorite color?',
+      'answers': ['Black', 'Green', 'White', 'Red']
+    },
+    {
+      'questionText': 'What\'s your favourite animal?',
+      'answers': ['Rabbit', 'Elephant', 'Lion', 'Horse']
+    },
+    {
+      'questions': 'What\'s your favourite city?',
+      'answer': ['Berlin', 'San Francisco', 'Munich', 'Dresden']
+    },
+  ];
   var _questionIndex = 0;
 
   void _answerQuestion() {
+    //var aBool = true
+
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
     print(_questionIndex);
+
+    if (_questionIndex < questions.length) {
+      print('We have more questions!');
+    } else {
+      print('No more questions!');
+    }
   }
 
   @override
   /** build method  */
   Widget build(BuildContext constext) {
-    var questions = [
-      {
-        'questionText': 'What\'s your favorite color?',
-        'answers': ['Black', 'Green', 'White', 'Red']
-      },
-      {
-        'questionText': 'What\'s your favourite animal?',
-        'answers': ['Rabbit', 'Elephant', 'Lion', 'Horse']
-      },
-      {
-        'questions': 'What\'s your favourite city?',
-        'answer': ['Berlin', 'San Francisco', 'Munich', 'Dresden']
-      },
-    ];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text('My First App'),
         ),
-        body: Column(
-          children: [
-            /* Text(questions.elementAt(2)), */
-            Question(questions[_questionIndex]['questionText']
-            ),
-            (questions[_questionIndex] ['answers'] as List<String>).map((answer)) {
-              return Answer(answer);
-            })
-            /* Answer(_answerQuestion),
+        body: _questionIndex < questions.length
+            ? Column(
+                children: [
+                  Question(
+                    questions[_questionIndex]['questionText'],
+                  ),
+                  ...(questions[_questionIndex]['answers'] as List<String>)
+                      .map((answer) {
+                    return Answer(_answerQuestion, answer);
+                  }).toList()
+                  /* Answer(_answerQuestion),
             Answer(_answerQuestion),
             Answer(_answerQuestion), */
-          ],
-        ),
+                ],
+              )
+            : Center(
+                child: Text('You did it!'),
+              ),
       ),
     );
   }
