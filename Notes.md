@@ -21,7 +21,7 @@ main(); // calling the function,
 ## What is a widget ? 🤔 
 👉 Flutter is all about **` widgets`** which are basically the building blocks, user interface components, with them the user interface is created;
 
-widgets:
+widgets: 👇
 - App Bar
 - Navigation Bar
 - List
