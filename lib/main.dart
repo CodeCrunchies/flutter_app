@@ -5,7 +5,15 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  var questionIndex = 0;
+
+  void answerQuestion() {
+    questionIndex = questionIndex + 1;
+   /*  print('Answer chosen'); */
+  }
+
   @override
+  /** build method  */
   Widget build(BuildContext constext) {
     var questions = [
       'What\'s your favorite color?',
@@ -18,10 +26,23 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Text('The question!'),
-            RaisedButton(child: Text('Answer 1'), onPressed: null),
-            RaisedButton(child: Text('Answer 2'), onPressed: null),
-            RaisedButton(child: Text('Answer 3'), onPressed: null),
+            /* Text(questions.elementAt(2)), */
+            Text(questions[0]),
+            RaisedButton(
+              child: Text('Answer 1'),
+              onPressed: answerQuestion, /**Name function */
+            ),
+            RaisedButton(
+              child: Text('Answer 2'),
+              onPressed: () => print('Answer 2 chosen!'), /** */
+            ),
+            RaisedButton(
+              child: Text('Answer 3'),
+              onPressed: () {
+                //...anonymous function
+                print('Answer 3 chosen!');
+              },
+            ),
           ],
         ),
       ),
