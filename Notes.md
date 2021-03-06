@@ -106,3 +106,35 @@ LayoutBuilder(
 )
 ```
 ## 👉 List is a default object built into Dart. 
+
+Lists are core feature of Dart - and actually of pretty much any programming language (in other languages, lists are also called **"arrays"**).
+
+🚀 Lists allow you to group **multiple values (of any type you want) together** - you can even have lists of lists if you want to (so-called "nested lists").
+
+```dart
+var aListOfText = ['Hi', 'This is a list', 'of multiple text snippets (strings)'];
+var aNestedList = [[1,2,3], [1,2,3]]; 
+```
+🛑 **Lists are created by wrapping the items that should be part of the list into square brackets. Often you have lists of the same type (i.e. a list with only strings or ints in it) but you can absolutely also have lists of mixed types:**
+```dart
+var aMixedList = ['Some text', 1, 5.99, ['a nested list!', 1]];
+```
+🛑 **Data in lists** can be accessed via the `index` of list items - the important thing  is, that this index starts at zero (0).
+```dart
+var names = ['Irene', 'Anne', 'Julie'];
+// Max has index 0, Anne has index 1, Julie has index 2
+print(names[0]); // prints 'Irene' in the console
+print(names[2]); // prints 'Julie' in the console
+print(names[3]); // would throw an error because there is no element with index 3 in the list
+```
+we can also find out how many items are in a list:
+
+```dart
+print(names.length); // prints 3 - it does NOT print the highest index but simply the amount of items
+```
+🛑 👉 **Dart** also offers many methods (functions that belong to an object) on the List object (like every other value in Dart, lists are an object).
+
+```dart
+names.add('Anne'); // this adds 'Anne' as a new element to the end of the list 
+names.remove('Irene'); // this removes 'Irene' from the list, all other items would move and fill the gap
+```
