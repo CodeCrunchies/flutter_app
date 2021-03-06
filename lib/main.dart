@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import './question.dart';
+import './answer.dart';
 
-  void main() {
+void main() {
   runApp(MyApp());
-}  
+}
 
 class MyApp extends StatefulWidget {
   @override
@@ -39,13 +40,10 @@ class MyAppState extends State<MyApp> {
           children: [
             /* Text(questions.elementAt(2)), */
             Question(questions[_questionIndex]),
-            RaisedButton(
-              child: Text('Answer 1'),
-              onPressed: _answerQuestion, /**Name function */
-            ),
+            Answer(),
             RaisedButton(
               child: Text('Answer 2'),
-              onPressed: () => print('Answer 2 chosen!'), /** */
+              onPressed: () => print('Answer 2 chosen!'),
             ),
             RaisedButton(
               child: Text('Answer 3'),
