@@ -28,8 +28,13 @@ class MyAppState extends State<MyApp> {
   /** build method  */
   Widget build(BuildContext constext) {
     var questions = [
-      'What\'s your favorite color?',
-      'What\'s your favourite animal?'
+      { 'questText': 
+      'What\'s your favorite color?', 'answers': ['Black', 'Green','White', 'Red']},
+      { 'questionText': 
+      'What\'s your favourite animal?', 'answers': ['Rabbit', 'Elephant', 'Lion', 'Horse']},
+      {'questions': 'What\'s your favourite city?', 'answer':['Berlin', 'San Francisco', 'Munich', 'Dresden']},
+
+      }
     ];
     return MaterialApp(
       home: Scaffold(
@@ -40,18 +45,9 @@ class MyAppState extends State<MyApp> {
           children: [
             /* Text(questions.elementAt(2)), */
             Question(questions[_questionIndex]),
-            Answer(),
-            RaisedButton(
-              child: Text('Answer 2'),
-              onPressed: () => print('Answer 2 chosen!'),
-            ),
-            RaisedButton(
-              child: Text('Answer 3'),
-              onPressed: () {
-                //...anonymous function
-                print('Answer 3 chosen!');
-              },
-            ),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
           ],
         ),
       ),
