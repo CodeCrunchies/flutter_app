@@ -138,3 +138,9 @@ print(names.length); // prints 3 - it does NOT print the highest index but simpl
 names.add('Anne'); // this adds 'Anne' as a new element to the end of the list 
 names.remove('Irene'); // this removes 'Irene' from the list, all other items would move and fill the gap
 ```
+
+## The State holds the Data that is used by the build method!
+
+setState forces Flutter to rerender the UI, not the entire UI of the app
+
+## One widget per file ! 
